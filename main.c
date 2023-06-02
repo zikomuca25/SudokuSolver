@@ -4,6 +4,7 @@
 #include <string.h>
 #include <math.h>
 #include "struct.h"
+
 void printEnteredValues(int n, int arr1[][n])
 {
     int i,j;
@@ -46,6 +47,7 @@ int getData(int n, int arr[][n], int arr1[][n])
         {
             scanf("%d", &arr[i][j]);
             if(arr[i][j]>n){
+                system("color 04");
                 printf("Number entered is out of range");
                 return 1;
             }
@@ -65,6 +67,7 @@ int getDataf(FILE * file, int n, int arr[][n], int arr1[][n])
             {
                 fscanf (file, "%d", &arr[i][j]);
                 if(arr[i][j]>n){
+                    system("color 04");
                     printf("Number entered is out of range");
                     return 1;
                 }
@@ -109,16 +112,22 @@ int solve(int n, int arr[][n], int x, int y)
 int main()
 {
     int i,j,n,test,a;
+
     printf("Welcome to Sudoku solver \n------------------------\n");
+
+
     printf("IMPORTANT: \n----------\n");
-    printf("1) Enter every row separately \n2) Range of accepted numbers are from 1 until the number of rown/colums \n3) For empty places put 0 \n4) If the layout is unsolvable, the program will print:UNSOLVABLE \n5)For the number of rown/colums is required to enter a number which has a square root\n");
+
+
+    printf("1) Enter every row separately \n2) Range of accepted numbers are from 1 until the number of rown/colums \n3) For empty places put 0 \n4) If the layout is unsolvable, the program will print:UNSOLVABLE \n5)For the number of rows/columns is required to enter a number which has a square root\n");
     printf("Press 1 if you want to enter the values directly. \nPress 2 if you want to read a file.\n");
     scanf("%d", &test);
     if(test==2){
-        printf("Cation: \nThe file should be constructed with this guidelines in mind: \n1)The first thing writen in the file must be the nr of rows/columns present. \n2)The rown should be writen seperately. \n3)The file must be named sizeInput.txt, and stored inside the programs file.\n");
+        printf("Cation: \nThe file should be constructed with this guidelines in mind: \n1)The first thing writen in the file must be the nr of rows/columns present. \n2)The rows should be writen seperately. \n3)The file must be named sizeInput.txt, and stored inside the programs file.\n");
         FILE *fptr;
-        fptr = fopen("C:\\Users\\Ziko\\Desktop\\Sudoku-Solver-testing\\other\\4Input.txt", "r");//relative path
+        fptr = fopen("C:\\Users\\User\\CLionProjects\\Sudoku-Solver-testing\\other\\4Input.txt", "r");//relative path
         if(fptr == NULL) {
+            system("color 04");
             printf("Not able to open the file.");
             return 1;
         }
@@ -126,6 +135,7 @@ int main()
         double sqrtf=sqrt(a);
         if(sqrtf!=(int)sqrt(a))
         {
+            system("color 04");
             printf("The number entered is wrong. \nPlease try again :)");
             return 0;
         }
@@ -138,7 +148,15 @@ int main()
             return 0;
         }
         int res = solve(a, arr,0,0);
+        system("color 07");
+        system("color 02");
+
         printf("The given puzzle is %s\n\n", (res==1?"SOLVABLE":"UNSOLVABLE"));
+        system("color 02");
+        //printf("The given puzzle is %s\n\n", (res==1?"SOLVABLE":"UNSOLVABLE"));
+
+        system("color 07");
+
         printf("The entered values are:\n");
         if(a==9)
             printf("-------------------------------\n");
@@ -148,13 +166,24 @@ int main()
             printf("---------------\n");
         printEnteredValues(a, arr1);
         printf("\n");
+
         printf("The solution of the given values:\n");
-        if(a==9)
+
+        if(a==9) {
+
             printf("-------------------------------\n");
-        else if(a==16)
+
+        }
+        else if(a==16) {
+
             printf("-----------------------------------------------------\n");
-        else if(a==4)
+
+        }
+        else if(a==4) {
+
             printf("---------------\n");
+
+        }
         //print
         for (i = 0; i < a; i++)
         {
@@ -184,8 +213,11 @@ int main()
                 else if(a==4)
                     printf("---------------\n");
             }
+
         }
     }
+
+
     else if(test==1)
     {
         printf("Please enter the number of rows/columns: ");
@@ -193,6 +225,7 @@ int main()
         double sqrtf=sqrt(n);
         if(sqrtf!=(int)sqrt(n))
         {
+            system("color 04");
             printf("The number entered is wrong. \nPlease try again :)");
             return 0;
         }
@@ -204,6 +237,7 @@ int main()
         }
         int res = solve(n, arr,0,0);
         printf("The given puzzle is %s\n\n", (res==1?"SOLVABLE":"UNSOLVABLE"));
+        system("color 02");
         printf("The entered values are:\n");
         if(n==9)
             printf("-------------------------------\n");
@@ -213,6 +247,7 @@ int main()
             printf("---------------\n");
         printEnteredValues(n, arr1);
         printf("\n");
+
         printf("The solution of the given values:\n");
         if(n==9)
             printf("-------------------------------\n");
@@ -249,11 +284,18 @@ int main()
                     printf("---------------\n");
             }
         }
+        system("color 07");
+
     }
+
     else{
+        system("color 04");
         printf("The entered value is wrong, please try again:");
         return 0;
     }
+    system("color 05");
     printf("Thank you for using our program \nHave a nice day :)\n");
+    system("color 05");
+
     return 0;
 }
