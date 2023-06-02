@@ -7,6 +7,10 @@ Description
 
 Data can be entered manually by the user, but data can also be read from a file. Solving this riddle is done by means of a backtracking algorithm. This program includes a user-friendly interface with clear user instructions. This code tells the user whether the data entered is wrong or not, and if so, the puzzle is solvable. The solver uses a recursive approach to find the solution taking into account the constraints of the Sudoku puzzle, such as row, column and block uniqueness. Solving the puzzle is effectively done.
 
+![Screenshot (64)](https://github.com/zikomuca25/Sudoku-Solver-testing/assets/128810179/ecb5b7d6-788f-42d8-9688-048f59c740d8)
+![Screenshot (65)](https://github.com/zikomuca25/Sudoku-Solver-testing/assets/128810179/349373b9-533d-44c2-9b04-db4db8ef17ab)
+
+
 
 Getting Started
 
