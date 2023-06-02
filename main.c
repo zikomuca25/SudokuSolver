@@ -123,7 +123,12 @@ int main()
             return 1;
         }
         fscanf (fptr, "%d", &a);
-
+        double sqrtf=sqrt(a);
+        if(sqrtf!=(int)sqrt(a))
+        {
+            printf("The number entered is wrong. \nPlease try again :)");
+            return 0;
+        }
         int arr[a][a];
         int arr1[a][a];
 
@@ -185,6 +190,12 @@ int main()
     {
         printf("Please enter the number of rows/columns: ");
         scanf("%d", &n);
+        double sqrtf=sqrt(n);
+        if(sqrtf!=(int)sqrt(n))
+        {
+            printf("The number entered is wrong. \nPlease try again :)");
+            return 0;
+        }
         int arr[n][n];
         int arr1[n][n];
         int ptest=getData(n, arr, arr1);
