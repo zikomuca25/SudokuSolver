@@ -19,7 +19,10 @@ void printEnteredValues(int n, int arr1[][n], int i, int j)
         printf("\n");
         if (((i + 1) % (int)sqrt(n)) == 0)
         {
-            printf("-------------------------------\n");
+            if(n==9)
+                printf("-------------------------------\n");
+            else if(n==16)
+                printf("----------------------------------------------------------\n");
         }
     }
 }
@@ -78,13 +81,19 @@ int main()
     int arr1[n][n];
     getData(n, arr, arr1, i, j);
     printf("The entered values are:\n");
-    printf("-------------------------------\n");
+    if(n==9)
+        printf("-------------------------------\n");
+    else if(n==16)
+        printf("----------------------------------------------------------\n");
     printEnteredValues(n, arr1, i, j);
     int res = solve(n, arr,0,0);
     printf("The given puzzle is %s\n\n", (res==1?"SOLVABLE":"UNSOLVABLE"));
     
     printf("The solution of the given values:\n");
-    printf("-------------------------------\n");
+    if(n==9)
+        printf("-------------------------------\n");
+    else if(n==16)
+        printf("----------------------------------------------------------\n");
 
     
     for (i = 0; i < n; i++)
@@ -102,7 +111,10 @@ int main()
         printf("\n");
         if (((i + 1) % (int)sqrt(n)) == 0)
         {
-            printf("-------------------------------\n");
+            if(n==9)
+                printf("-------------------------------\n");
+            else if(n==16)
+                printf("----------------------------------------------------------\n");
         }
     }
     printf("Thank you for using our program \nHave a nice day :)\n");
