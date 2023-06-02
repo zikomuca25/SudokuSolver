@@ -117,13 +117,18 @@ int main()
     if(test==2){
         printf("Cation: \nThe file should be constructed with this guidelines in mind: \n1)The first thing writen in the file must be the nr of rows/columns present. \n2)The rown should be writen seperately. \n3)The file must be named sizeInput.txt, and stored inside the programs file.\n");
         FILE *fptr;
-        fptr = fopen("C:\\Users\\Ziko\\Desktop\\SudokuSolver\\other\\4Input.txt", "r");//relative path
+        fptr = fopen("C:\\Users\\Ziko\\Desktop\\Sudoku-Solver-testing\\other\\4Input.txt", "r");//relative path
         if(fptr == NULL) {
             printf("Not able to open the file.");
             return 1;
         }
         fscanf (fptr, "%d", &a);
-
+        double sqrtf=sqrt(a);
+        if(sqrtf!=(int)sqrt(a))
+        {
+            printf("The number entered is wrong. \nPlease try again :)");
+            return 0;
+        }
         int arr[a][a];
         int arr1[a][a];
 
@@ -185,6 +190,12 @@ int main()
     {
         printf("Please enter the number of rows/columns: ");
         scanf("%d", &n);
+        double sqrtf=sqrt(n);
+        if(sqrtf!=(int)sqrt(n))
+        {
+            printf("The number entered is wrong. \nPlease try again :)");
+            return 0;
+        }
         int arr[n][n];
         int arr1[n][n];
         int ptest=getData(n, arr, arr1);
