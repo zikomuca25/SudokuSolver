@@ -113,7 +113,7 @@ int main()
     if(test==2){
         printf("Cation: \nThe file should be constructed with this guidelines in mind: \n1)The first thing writen in the file must be the nr of rows/columns present. \n2)The rown should be writen seperately. \n3)The file must be named Input.txt, and stored inside the programs file.\n");
         FILE *fptr;
-        fptr = fopen("Input.txt", "r");
+        fptr = fopen("C:\\Users\\Ziko\\Downloads\\Sudoku-Solver-testing-main\\Sudoku-Solver-testing-main\\other\\9Input.txt", "r");
         if(fptr == NULL) {
             printf("Not able to open the file.");
             return 1;
